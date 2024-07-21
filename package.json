@@ -1,0 +1,30 @@
+{
+  "name": "translateer",
+  "private": true,
+  "version": "2.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "ts-node src/app.ts",
+    "debug": "DEBUG=true npm run dev",
+    "start": "node dist/app.js",
+    "build": "rimraf dist && tsc && copyfiles -u 1 src/public/**/* dist/public",
+    "bootstrap": "npm ci && npm run build && npm run start"
+  },
+  "author": "Songkeys",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@fastify/static": "^7.0.3",
+    "fastify": "^4.26.2",
+    "puppeteer": "^22.13.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
